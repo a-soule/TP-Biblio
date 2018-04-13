@@ -5,6 +5,8 @@
  */
 package gestion;
 
+import hibernatecvven.gestion.Menu;
+
 /**
  *
  * @author k-tremen
@@ -139,7 +141,7 @@ public class Connexion extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Connexion().setVisible(true);
+                new Menu().setVisible(true);
             }
         });
     }

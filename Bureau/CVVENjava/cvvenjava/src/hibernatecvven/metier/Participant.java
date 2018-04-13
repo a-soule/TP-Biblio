@@ -1,4 +1,10 @@
-package metier;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package hibernatecvven.metier;
+
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,6 +19,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "participant")
+
 public class Participant {
 
     //Numéro de participant
@@ -28,44 +35,44 @@ public class Participant {
     // Prénom du participant
     @Column(name = "prenom")
     private String prenom;
-    
-    // Email du participant
-    @Column(name = "email")
-    private String email;
-    
-    // Date de naissance du participant
-    @Column(name = "date_naiss")
-    private String date_naiss;
 
     // Organisation dont fait partie le participant
     @Column(name = "organisation")
     private String organisation;
     
-    // Prénom du participant
+    // Organisation dont fait partie le participant
+    @Column(name = "email")
+    private String email;
+    
+    @Column(name = "date_naiss")
+    private String date;
+    
+    // Organisation dont fait partie le participant
     @Column(name = "observations")
     private String observations;
     
-    // Nom d'utilisateur du participant
-    @Column(name = "login")
-    private String login;
-    
-    // Mot de passe du participant
+    // Organisation dont fait partie le participant
     @Column(name = "password")
     private String password;
 
-    public Participant(String nom, String prenom, String email, String date_naiss, String organisation, String observations, String login, String password) {
-        this.nom = nom;
-        this.prenom = prenom;
-        this.email = email;
-        this.date_naiss = date_naiss;
-        this.organisation = organisation;
-        this.observations = observations;
-        this.login = login;
-        this.password = password;
-    }
+    @Column(name = "login")
+    private String login;
 
     public Participant() {
     }
+
+    public Participant(String nom, String prenom, String organisation, String email,String date, String observations, String login,String password) {
+        this.nom = nom;
+        this.prenom = prenom;
+        this.organisation = organisation;
+        this.email = email;
+        
+        this.observations = observations;
+        this.password = password;
+        this.login = login;
+    }
+
+    
 
     public int getNum_pers() {
         return num_pers;
@@ -91,28 +98,20 @@ public class Participant {
         this.prenom = prenom;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getDate_naiss() {
-        return date_naiss;
-    }
-
-    public void setDate_naiss(String date_naiss) {
-        this.date_naiss = date_naiss;
-    }
-
     public String getOrganisation() {
         return organisation;
     }
 
     public void setOrganisation(String organisation) {
         this.organisation = organisation;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getObservations() {
@@ -123,14 +122,6 @@ public class Participant {
         this.observations = observations;
     }
 
-    public String getLogin() {
-        return login;
-    }
-
-    public void setLogin(String login) {
-        this.login = login;
-    }
-
     public String getPassword() {
         return password;
     }
@@ -138,12 +129,10 @@ public class Participant {
     public void setPassword(String password) {
         this.password = password;
     }
+
     
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public String toString() {
-        return "Participant{" + "num_pers=" + num_pers + ", nom=" + nom + ", prenom=" + prenom + ", email=" + email + ", date_naiss=" + date_naiss + ", organisation=" + organisation + ", observations=" + observations + ", login=" + login + ", password=" + password + '}';
-    }
+    
+    
+
+
 }
